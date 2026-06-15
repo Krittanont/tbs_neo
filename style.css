@@ -19,8 +19,8 @@ body{
     width:100%;
     z-index:9999;
 
-     backdrop-filter:blur(5px);
-    -webkit-backdrop-filter:blur(20px);
+     backdrop-filter:blur(0.3vw);
+    -webkit-backdrop-filter:blur(0.3vw);
 
     background:linear-gradient(
         to bottom,
