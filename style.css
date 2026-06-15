@@ -4,6 +4,7 @@
     --gold:#d6b46a;
     --dark:#111;
     --light:#fff;
+    --blue:#1d72b8;
 }
 
 body{
@@ -22,12 +23,7 @@ body{
      backdrop-filter:blur(0.3vw);
     -webkit-backdrop-filter:blur(0.3vw);
 
-    background:linear-gradient(
-        to bottom,
-        rgba(255,255,255,.20) 0%,
-        rgba(255,255,255,.12) 40%,
-        rgba(255,255,255,.04) 100%
-    );
+    background:transparent;
 
     border-bottom:1px solid rgba(255,255,255,.12);
 
@@ -40,7 +36,7 @@ body{
 }
 
 .lux-header.scrolled{
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.75);
     backdrop-filter:blur(16px);
     box-shadow:0 10px 30px rgba(0,0,0,.08);
     padding:10px 0;
@@ -100,11 +96,11 @@ body{
 .luxury-menu .nav-link::after{
     content:'';
     position:absolute;
-    bottom:-5px;
+    bottom:5px;
     left:0;
 
     width:0;
-    height:1px;
+    height:2px;
 
     background:#1d72b8;
 
@@ -139,7 +135,7 @@ body{
 .hamburger{
     display:flex;
     flex-direction:column;
-    gap:5px;
+    gap:4px;
 }
 
 .hamburger span{
@@ -150,7 +146,7 @@ body{
 }
 
 .lux-header.scrolled .hamburger span{
-    background:#111;
+    background:#1d72b8;
 }
 
 /* MOBILE */
@@ -160,13 +156,13 @@ body{
     .navbar-collapse{
         margin-top:15px;
 
-        background:white;
+        background:rgba(255, 255, 255,1);
         border-radius:16px;
 
         padding:20px;
 
         box-shadow:
-        0 10px 30px rgba(0,0,0,.08);
+        0 10px 30px rgba(0,0,0,.2);
     }
 
     .luxury-menu{
@@ -218,7 +214,7 @@ body{
     background:
     linear-gradient(
         rgba(0,0,0,.25),
-        rgba(0,0,0,.45)
+        rgba(0,0,0,.50)
     );
 }
 
@@ -241,9 +237,7 @@ body{
 }
 
 .hero-subtitle{
-    letter-spacing:5px;
     margin-bottom:15px;
-    opacity:.85;
 }
 
 .hero-subtitle img{
@@ -251,6 +245,7 @@ body{
 }
 
 .hero-content h1{
+    line-height: 1;
      font-family: "Roboto Condensed", sans-serif;
     font-size:clamp(3rem,7vw,6rem);
     font-weight:300;
@@ -259,6 +254,10 @@ body{
 
 .hero-content p{
      font-family: "Roboto Condensed", sans-serif;
-    max-width:700px;
-    opacity:.9;
+    opacity:.75;
+}
+
+.hero-content div img{
+    max-width:20vh;
+    opacity:.75;
 }
