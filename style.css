@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --gold:#d6b46a;
+    --dark:#111;
+    --light:#fff;
+}
+
+body{
+    min-height:400vh; background-color: rgb(255, 255, 255);
+}
+
+/* HEADER */
+
+.lux-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+
+     backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(20px);
+
+    background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,.20) 0%,
+        rgba(255,255,255,.12) 40%,
+        rgba(255,255,255,.04) 100%
+    );
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    transition:
+    background .4s ease,
+    transform .4s ease,
+    padding .4s ease;
+
+    padding:10px 0;
+}
+
+.lux-header.scrolled{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(16px);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    padding:10px 0;
+}
+
+.lux-header.hide{
+    transform:translateY(-100%);
+}
+
+/* BRAND */
+
+.logo-img{
+    height:60px;
+    transition:.4s;
+}
+
+.brand-divider{
+    width:1px;
+    height:50px;
+    background:rgba(255,255,255,.5);
+    margin:0 18px;
+    transition:.4s;
+}
+
+.brand-text{
+    font-family: "Roboto Condensed", sans-serif;
+    line-height:1.1;
+    display:flex;
+    flex-direction:column;
+}
+
+.brand-text span{
+    color:white;
+    font-weight:600;
+    transition:.4s;
+}
+
+.brand-text small{
+    color:white;
+    opacity:.8;
+    transition:.4s;
+}
+
+/* MENU */
+
+.luxury-menu{
+    gap:40px; font-family: "Roboto Condensed", sans-serif;
+}
+
+.luxury-menu .nav-link{
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+.luxury-menu .nav-link::after{
+    content:'';
+    position:absolute;
+    bottom:-5px;
+    left:0;
+
+    width:0;
+    height:1px;
+
+    background:#1d72b8;
+
+    transition:.3s;
+}
+
+.luxury-menu .nav-link:hover::after{
+    width:100%;
+}
+
+.luxury-menu .nav-link:hover{
+    color:#ffffff;
+}
+
+/* SCROLLED STATE */
+
+.lux-header.scrolled .nav-link{
+    color:#000000;
+}
+
+.lux-header.scrolled .brand-text span,
+.lux-header.scrolled .brand-text small{
+    color:#1d72b8;
+}
+
+.lux-header.scrolled .brand-divider{
+    background:#1d72b8;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.hamburger span{
+    width:28px;
+    height:2px;
+    background:white;
+    transition:.4s;
+}
+
+.lux-header.scrolled .hamburger span{
+    background:#111;
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+    .navbar-collapse{
+        margin-top:15px;
+
+        background:white;
+        border-radius:16px;
+
+        padding:20px;
+
+        box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .luxury-menu{
+        gap:0;
+        align-items:flex-start;
+    }
+
+    .luxury-menu .nav-link{
+        color:#111 !important;
+        padding:12px 0;
+    }
+
+    .brand-text span{
+        font-size:12px;
+    }
+
+    .brand-text small{
+        font-size:10px;
+    }
+
+    .logo-img{
+        height:50px;
+    }
+
+}
+
+.hero-section{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+
+    background-image:url('RESOURCES/tbs.jpg');
+    background-size:cover;
+    background-position:center;
+    filter: brightness(75%);
+    transform:translateY(0);
+    will-change:transform;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.45)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:20px;
+}
+
+.hero-subtitle{
+    letter-spacing:5px;
+    margin-bottom:15px;
+    opacity:.85;
+}
+
+.hero-subtitle img{
+    height: 15vh;
+}
+
+.hero-content h1{
+     font-family: "Roboto Condensed", sans-serif;
+    font-size:clamp(3rem,7vw,6rem);
+    font-weight:300;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+     font-family: "Roboto Condensed", sans-serif;
+    max-width:700px;
+    opacity:.9;
+}

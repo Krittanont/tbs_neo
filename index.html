@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<title>tbs</title>
+</head>
+<body>
+
+<header id="mainHeader" class="lux-header">
+
+    <div class="container-fluid px-lg-5">
+
+        <nav class="navbar navbar-expand-lg">
+
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+
+                <img
+                    id="logo"
+                    src="RESOURCES/logo_w.png"
+                    class="logo-img"
+                    alt="Logo">
+
+                <div class="brand-divider"></div>
+
+                <div class="brand-text">
+                    <span class="fs-4">THAMMASAT</span>
+                    <small class="fs-6">BUSINESS SCHOOL</small>
+                </div>
+
+            </a>
+
+            <!-- Mobile Button -->
+            <button
+                class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainMenu">
+
+                <span class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse justify-content-center" id="mainMenu">
+
+                <ul class="navbar-nav luxury-menu">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admission</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Academic Programs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Current Students</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<script>
+
+const header = document.getElementById("mainHeader");
+const logo = document.getElementById("logo");
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const current = window.pageYOffset;
+
+    /* change style */
+
+    if(current > 80){
+
+        header.classList.add("scrolled");
+
+        logo.src = "RESOURCES/logo_b.png";
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+        logo.src = "RESOURCES/logo_w.png";
+    }
+
+    /* hide on scroll down */
+
+    if(current > 150){
+
+        if(current > lastScroll){
+
+            header.classList.add("hide");
+
+        }else{
+
+            header.classList.remove("hide");
+        }
+    }
+
+    lastScroll = current;
+
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<section class="hero-section">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-subtitle">
+            <img src="RESOURCES/tbs88th.png" alt="logo">
+        </span>
+
+        <h1 class="fw-bold">
+           THAMMASAT <br> BUSINESS SCHOOL
+        </h1>
+
+        <p class="fs-5">
+            is among the select group of business schools worldwide to achieve Triple Crown Accreditation from EQUIS, AACSB, and AMBA.
+        </p>
+
+    </div>
+
+</section>
+
+<script>
+
+const heroBg = document.querySelector('.hero-bg');
+
+window.addEventListener('scroll', () => {
+
+    const scrollY = window.pageYOffset;
+
+    heroBg.style.transform =
+        `translateY(${scrollY * 0.4}px)`;
+
+});
+
+</script>
+
+</body>
+</html>
