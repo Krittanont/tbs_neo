@@ -536,7 +536,7 @@ body{
     inset:0;
 
     background:
-    url("RESOURCES/tbsbuilding.jpg")
+    url("RESOURCES/puay2.webp")
     center center/cover;
 
     transform:scale(1);
@@ -568,7 +568,7 @@ body{
     right:8%;
     bottom:10%;
 
-    max-width:550px;
+    max-width:570px;
 
     padding:45px;
 
@@ -578,11 +578,11 @@ body{
     rgba(255,255,255,.10);
 
     backdrop-filter:
-    blur(3vh)
+    blur(2.5vh)
     saturate(180%);
 
     -webkit-backdrop-filter:
-    blur(20px)
+    blur(2vh)
     saturate(180%);
 
     border:
@@ -676,10 +676,10 @@ body{
 
 .showcase-glass:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-3px);
 
     backdrop-filter:
-    blur(30px)
+    blur(4vh)
     saturate(200%);
 }
 
@@ -712,14 +712,14 @@ body{
     font-family: "Outfit", sans-serif;
     position:absolute;
 
-    top:-70px;
+    top:-67px;
     right:20px;
 
     font-size:10rem;
 
     font-weight:500;
 
-    color:rgba(255,255,255,.08);
+    color:rgba(255,255,255,.05);
 
     pointer-events:none;
 
