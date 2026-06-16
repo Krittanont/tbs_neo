@@ -37,18 +37,19 @@
 
             <!-- Mobile Button -->
             <button
-                class="navbar-toggler border-0 shadow-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainMenu">
+    id="menuToggle"
+    class="navbar-toggler border-0 shadow-none collapsed"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#mainMenu">
 
-                <span class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
+    <span class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
 
-            </button>
+</button>
 
             <!-- Menu -->
             <div class="collapse navbar-collapse justify-content-center" id="mainMenu">
@@ -56,23 +57,23 @@
                 <ul class="navbar-nav luxury-menu">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">HOME</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admission</a>
+                        <a class="nav-link" href="#">ADMISSION</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Academic Programs</a>
+                        <a class="nav-link" href="#">ACADEMIC PROGRAMS</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Current Students</a>
+                        <a class="nav-link" href="#">CURRENT STUDENTS</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">News</a>
+                        <a class="nav-link" href="#">NEWS</a>
                     </li>
 
                 </ul>
@@ -174,6 +175,175 @@ window.addEventListener('scroll', () => {
 
     heroBg.style.transform =
         `translateY(${scrollY * 0.4}px)`;
+
+});
+
+</script>
+
+<section class="lux-stats">
+
+    <div class="container">
+
+        <div class="stats-heading">
+
+            <span>TBS IN NUMBERS</span>
+
+            <h2>
+                Excellence Measured By Impact
+            </h2>
+
+        </div>
+
+        <div class="row g-5">
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h3 class="counter" data-target="88">0</h3>
+
+                    <p>Years of Excellence</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h3 class="counter" data-target="40000">0</h3>
+
+                    <p>Alumni Worldwide</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h3>3</h3>
+
+                    <p>Triple Crown Accreditations</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h3 class="counter" data-target="100">0</h3>
+
+                    <p>Partner Universities</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const counters =
+document.querySelectorAll('.counter');
+
+const observer =
+new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const counter =
+            entry.target;
+
+            const target =
+            +counter.dataset.target;
+
+            let current = 0;
+
+            const update = ()=>{
+
+                current += target / 100;
+
+                if(current < target){
+
+                    counter.innerText =
+                    Math.floor(current).toLocaleString();
+
+                    requestAnimationFrame(update);
+
+                }else{
+
+                    counter.innerText =
+                    target.toLocaleString();
+
+                }
+
+            };
+
+            update();
+
+            observer.unobserve(counter);
+
+        }
+
+    });
+
+},{threshold:.5});
+
+counters.forEach(counter=>{
+    observer.observe(counter);
+});
+
+</script>
+
+<section class="luxury-showcase">
+
+    <div class="showcase-image"></div>
+
+    <div class="showcase-glass">
+
+        <span class="showcase-tag">
+            ABOUT TBS
+        </span>
+
+        <h2>
+            The Crown Jewel of Our Pride
+        </h2>
+
+        <p>
+           <img src="RESOURCES/crown.png" alt="">
+        </p>
+
+        <a href="#" class="fs-6">
+            Discover More
+        </a>
+
+    </div>
+
+</section>
+
+<script>
+
+const showcaseImage =
+document.querySelector('.showcase-image');
+
+window.addEventListener('scroll',()=>{
+
+    const y =
+    window.pageYOffset;
+
+    showcaseImage.style.transform =
+    `scale(${1 + y * 0.00008})`;
 
 });
 
