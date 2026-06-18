@@ -724,3 +724,409 @@ body{
     pointer-events:none;
 
 }
+
+.program-section{
+    height: 160vh;
+    padding:140px 0;
+
+    background:#fff;
+
+}
+
+.program-header{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.program-header span{
+
+    display:block;
+
+    color:#1d72b8;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+
+    font-family:"Roboto Condensed",sans-serif;
+
+}
+
+.program-header h2{
+
+    font-size:clamp(2.5rem,5vw,5rem);
+
+    font-family:"Outfit",sans-serif;
+
+    font-weight:400;
+
+    color:#111;
+
+}
+
+.program-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:0;
+
+}
+
+.program-card{
+
+    position:relative;
+
+    height:65vh;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+.program-card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+    transform 1s ease;
+
+}
+
+.program-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        transparent 25%,
+        rgba(0,0,0,.75)
+    );
+
+    z-index:1;
+
+}
+
+.program-overlay{
+
+    position:absolute;
+
+    left:20px;
+    right:20px;
+    bottom:20px;
+
+    z-index:2;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    background:   rgba(255,255,255,.08);
+
+    backdrop-filter:
+    blur(20px)
+    saturate(180%);
+
+    -webkit-backdrop-filter:
+    blur(20px)
+    saturate(180%);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    transition:.6s ease;
+
+}
+
+.program-overlay h3{
+
+    color:white;
+
+    font-size:2rem;
+
+    margin:0;
+
+    font-family:"Outfit",sans-serif;
+
+    transition:.5s ease;
+
+}
+
+.program-overlay p{
+
+    margin-top:15px;
+
+    color:white;
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+    transition:.5s ease;
+
+    line-height:1.7;
+
+}
+.program-card:hover img{
+
+    transform:
+    scale(1.08);
+
+}
+
+.program-card:hover .program-overlay{
+    background:
+    rgba(255,255,255,.12);
+    backdrop-filter:
+    blur(1rem)
+    saturate(220%);
+
+}
+
+.program-card:hover .program-overlay h3{
+
+    transform:
+    translateY(-12px);
+
+}
+
+.program-card:hover .program-overlay p{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+.program-overlay::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:22px;
+
+    bottom:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#1d72b8;
+
+    transition:.6s ease;
+
+}
+
+.program-card:hover
+.program-overlay::after{
+
+    width:90px;
+
+}
+
+@media(max-width:991px){
+
+    .program-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .program-card{
+
+        height:320px;
+
+    }
+
+    .program-overlay h3{
+
+        font-size:1.4rem;
+
+    }
+
+}
+
+.program-section{
+    padding:140px 0;
+    background:#fff;
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:3rem;
+
+}
+
+.section-title span img{
+    height: 15vh;opacity:.4;
+    color:#000000;
+    margin-bottom:3rem;
+}
+
+.section-title h2{
+    color: #1d72b8;
+    font-size:clamp(2.5rem,5vw,5rem);
+    font-family:"Outfit",sans-serif; font-weight: 500;
+}
+
+.program-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.program-card{
+
+    position:relative;
+
+    height:80vh;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+.program-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s ease;
+}
+
+.program-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(transparent 25%, rgba(0,0,0,.75));
+    z-index:1;
+
+}
+
+.program-content{
+    position:absolute;
+    left:25px;
+    right:25px;
+    bottom:25px;
+    z-index:2;
+}
+
+.program-content h3{
+    text-shadow:0 0px 10px rgb(0, 0, 0,.6);
+    font-family:"Outfit",sans-serif;
+    color:white;
+    margin:0;
+    font-size:clamp(2rem,2vw,2rem);
+    transition:.5s ease;
+
+}
+
+.program-detail{
+    margin-top:15px;
+    padding:18px;
+    border-radius:20px;
+    background:
+    rgba(255,255,255,.08);
+    backdrop-filter:  blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,.15);
+    opacity:0;
+    transform:translateY(40px);
+    transition:.5s ease;
+
+}
+
+.program-detail p{
+    font-family:"Roboto Condensed",sans-serif;
+    color:white;
+
+    margin:0;
+
+    line-height:1.7;
+
+    font-size:.9rem;
+
+}
+
+.program-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.program-card:hover h3{
+
+    transform:
+    translateY(-10px);
+
+}
+
+.program-card:hover .program-detail{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+@media(max-width:991px){
+
+    .program-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .program-card{
+
+        height:320px;
+
+    }
+
+    .program-content{
+
+        left:15px;
+        right:15px;
+        bottom:15px;
+
+    }
+
+    .program-content h3{
+
+        font-size:1.2rem;
+
+    }
+
+    .program-detail{
+
+        padding:14px;
+
+    }
+
+    .program-detail p{
+
+        font-size:.8rem;
+
+    }
+
+}
