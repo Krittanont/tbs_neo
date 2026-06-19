@@ -727,7 +727,7 @@ body{
 
 .program-section{
     height: 160vh;
-    padding:140px 0;
+    padding:7rem 10rem;
 
     background:#fff;
 
@@ -768,30 +768,40 @@ body{
 }
 
 .program-grid{
-
+    gap:2rem;
     display:grid;
 
     grid-template-columns:
     repeat(4,1fr);
 
-    gap:0;
-
 }
 
 .program-card{
-
+    box-shadow:0 0px 10px rgba(0,0,0,.3);
     position:relative;
-
-    height:65vh;
-
+    border-radius:2rem;
+    height:70vh;
+    border:1px solid rgba(245, 245, 245, 0.1);
     overflow:hidden;
 
     cursor:pointer;
+    transition:transform .5s ease,
+    box-shadow .5s ease,
+    border-color .5s ease;
+}
+
+.program-card:hover{
+
+    transform:
+    scale(1.02);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.18);
 
 }
 
 .program-card img{
-
+    display:block;
     width:100%;
     height:100%;
 
@@ -803,7 +813,7 @@ body{
 }
 
 .program-card::before{
-
+    border-radius:2rem;
     content:'';
 
     position:absolute;
@@ -943,15 +953,19 @@ body{
 @media(max-width:991px){
 
     .program-grid{
-
+        gap:2vw;
         grid-template-columns:
         repeat(2,1fr);
 
     }
 
+    .program-section{
+    padding:7rem 1.5rem;
+    }
+
     .program-card{
 
-        height:320px;
+        height:50vh;
 
     }
 
@@ -963,11 +977,6 @@ body{
 
 }
 
-.program-section{
-    padding:140px 0;
-    background:#fff;
-}
-
 .section-title{
 
     text-align:center;
@@ -976,7 +985,7 @@ body{
 }
 
 .section-title span img{
-    height: 15vh;opacity:.4;
+    height: 10vh;opacity:.4;
     color:#000000;
     margin-bottom:3rem;
 }
@@ -985,23 +994,6 @@ body{
     color: #1d72b8;
     font-size:clamp(2.5rem,5vw,5rem);
     font-family:"Outfit",sans-serif; font-weight: 500;
-}
-
-.program-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.program-card{
-
-    position:relative;
-
-    height:80vh;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
 }
 
 .program-card img{
@@ -1094,12 +1086,6 @@ body{
 
         grid-template-columns:
         repeat(2,1fr);
-
-    }
-
-    .program-card{
-
-        height:320px;
 
     }
 
