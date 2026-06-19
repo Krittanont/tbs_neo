@@ -793,8 +793,8 @@ body{
 .program-card:hover{
 
     transform:
-    scale(1.02);
-
+    scale(1.06);
+    border:none;
     box-shadow:
     0 25px 60px rgba(0,0,0,.18);
 
@@ -953,7 +953,7 @@ body{
 @media(max-width:991px){
 
     .program-grid{
-        gap:2vw;
+        gap:3vw;
         grid-template-columns:
         repeat(2,1fr);
 
@@ -964,8 +964,8 @@ body{
     }
 
     .program-card{
-
-        height:50vh;
+        border-radius:1.5rem;
+        height:35vh;
 
     }
 
